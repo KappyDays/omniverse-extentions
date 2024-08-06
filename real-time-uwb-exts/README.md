@@ -1,3 +1,6 @@
+# Warning!
+exts/uwb.rtls/uwb/rtls 폴더에 my_config.json 파일이 있어야 함
+
 # Extension Project Template
 
 This project was automatically generated.
