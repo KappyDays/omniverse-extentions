@@ -1,3 +1,5 @@
+https://github.com/user-attachments/assets/6916fd64-a43c-438f-8897-47379df86a03
+
 ## Vehicle Scenario Custom Extension Import
 
 1. **Clone the repository**
