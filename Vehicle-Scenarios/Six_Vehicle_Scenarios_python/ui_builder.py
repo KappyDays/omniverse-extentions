@@ -555,7 +555,7 @@ class UIBuilder:
         omni.kit.commands.execute('TransformMultiPrimsSRTCpp',
             count=1,
             paths=[Main_Car_Path],
-            new_translations=[7.11986543410694, -23.063272287127067, 0.01019476354160409],
+	        new_translations=[7.119865434106926, -16.74427, 0.01019476354160409],
             new_rotation_eulers=[89.99999999999983, 87.92523364481747, 8.810729923425242e-13],
             new_rotation_orders=[2, 1, 0],
             new_scales=[0.012999999523162843, 0.012999999523162843, 0.012999999523162843],
@@ -660,59 +660,59 @@ class UIBuilder:
         Main_Car_Path = self._on_scenario5_clicked()
         self._set_viewport_camera(f"{Main_Car_Path}/{Main_Car_Path.split('/')[3][0]}_Front_Camera")    
 
-    def _on_scenario6_clicked(self):
-        """Callback function for Scenario 6 button"""
-        status = "Scenario 6 button was clicked!"
-        self._status_report_field.set_text(status)
-        print("Executing Scenario 6...")
+    # def _on_scenario6_clicked(self):
+    #     """Callback function for Scenario 6 button"""
+    #     status = "Scenario 6 button was clicked!"
+    #     self._status_report_field.set_text(status)
+    #     print("Executing Scenario 6...")
         
-        # 기본 Car/Pede 활성화/비활성화
-        self._hide_all_cars()
-        self._set_defualt_background_pedestrians()
+    #     # 기본 Car/Pede 활성화/비활성화
+    #     self._hide_all_cars()
+    #     self._set_defualt_background_pedestrians()
         
-        ## 여기서부터 수정
-        Main_Character_Path = "/World/Characters/Character_02"
-        Main_Car_Path = "/World/Cars/Bentley_Mulliner_Batur"
+    #     ## 여기서부터 수정
+    #     Main_Character_Path = "/World/Characters/Character_02"
+    #     Main_Car_Path = "/World/Cars/Bentley_Mulliner_Batur"
         
-        """ 실제 시나리오 Actor 1명 활성화 """
-        omni.kit.commands.execute('ToggleVisibilitySelectedPrims',
-            selected_paths=[Main_Character_Path],
-            stage=omni.usd.get_context().get_stage(),
-            visible=True)             
+    #     """ 실제 시나리오 Actor 1명 활성화 """
+    #     omni.kit.commands.execute('ToggleVisibilitySelectedPrims',
+    #         selected_paths=[Main_Character_Path],
+    #         stage=omni.usd.get_context().get_stage(),
+    #         visible=True)             
         
-        """ 실제 시나리오 Car 1대 활성화 """
-        omni.kit.commands.execute('ToggleVisibilitySelectedPrims',
-            selected_paths=[Main_Car_Path],
-            stage=omni.usd.get_context().get_stage(),
-            visible=True)             
+    #     """ 실제 시나리오 Car 1대 활성화 """
+    #     omni.kit.commands.execute('ToggleVisibilitySelectedPrims',
+    #         selected_paths=[Main_Car_Path],
+    #         stage=omni.usd.get_context().get_stage(),
+    #         visible=True)             
                     
-        # Main Character & Car
-        omni.kit.commands.execute('TransformMultiPrimsSRTCpp',
-            count=1,
-            paths=[Main_Character_Path],
-            new_translations=[9.714786793446788, -15.194190969387353, 0.21699999999999198],
-            new_rotation_eulers=[0.0, -0.0, -56.14425881787412],
-            new_rotation_orders=[0, 1, 2],
-            new_scales=[1.0, 1.0, 1.0],
-            usd_context_name='',
-            time_code=114.0)
+    #     # Main Character & Car
+    #     omni.kit.commands.execute('TransformMultiPrimsSRTCpp',
+    #         count=1,
+    #         paths=[Main_Character_Path],
+    #         new_translations=[9.714786793446788, -15.194190969387353, 0.21699999999999198],
+    #         new_rotation_eulers=[0.0, -0.0, -56.14425881787412],
+    #         new_rotation_orders=[0, 1, 2],
+    #         new_scales=[1.0, 1.0, 1.0],
+    #         usd_context_name='',
+    #         time_code=114.0)
 
-        omni.kit.commands.execute('TransformMultiPrimsSRTCpp',
-            count=1,
-            paths=[Main_Car_Path],
-            new_translations=[7.813983069786175, -6.088460807160565, 0.015720350666300065],
-            new_rotation_eulers=[90.0, -183.287684915079, 0.0],
-            new_rotation_orders=[2, 1, 0],
-            new_scales=[1.3, 1.3, 1.3],
-            usd_context_name='',
-            time_code=114.0)
-        self._set_viewport_to_perspective()
+    #     omni.kit.commands.execute('TransformMultiPrimsSRTCpp',
+    #         count=1,
+    #         paths=[Main_Car_Path],
+    #         new_translations=[7.813983069786175, -6.088460807160565, 0.015720350666300065],
+    #         new_rotation_eulers=[90.0, -183.287684915079, 0.0],
+    #         new_rotation_orders=[2, 1, 0],
+    #         new_scales=[1.3, 1.3, 1.3],
+    #         usd_context_name='',
+    #         time_code=114.0)
+    #     self._set_viewport_to_perspective()
         
-        return Main_Car_Path
+    #     return Main_Car_Path
         
-    def _on_scenario6_clicked_fp(self):
-        Main_Car_Path = self._on_scenario6_clicked()
-        self._set_viewport_camera(f"{Main_Car_Path}/{Main_Car_Path.split('/')[3][0]}_Front_Camera")    
+    # def _on_scenario6_clicked_fp(self):
+    #     Main_Car_Path = self._on_scenario6_clicked()
+    #     self._set_viewport_camera(f"{Main_Car_Path}/{Main_Car_Path.split('/')[3][0]}_Front_Camera")    
 
     ######################################################################################
     # Functions Below This Point Are Callback Functions Attached to UI Element Wrappers
